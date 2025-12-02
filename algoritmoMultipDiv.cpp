@@ -41,14 +41,14 @@ long long M_trad(long long x, long long y) {
     long long yR = y % divisor;
     
     long long p1 = M_trad(xL, yL);
-    long long p2 = M_trad(xL, yR);
-    long long p3 = M_trad(xR, yL);
-    long long p4 = M_trad(xR, yR);
+    long long p2 = M_trad(xR, yR);
+    long long p3 = M_trad((xR+xL), (yR+yL));
+    
     
     long long potencia_2m = potencia_10(2 * m);
     long long potencia_m = potencia_10(m);
     
-    long long resultado = potencia_2m * p1 + potencia_m * (p2 + p3) + p4;
+    long long resultado = potencia_2m * p1 + potencia_m * (p3 - p1 - p2) + p2;
     
     return resultado;
 }

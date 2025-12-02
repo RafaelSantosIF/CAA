@@ -1,0 +1,13 @@
+# Por que o Merge Sort não é considerado um algoritmo in-place?
+
+R.: O Merge Sort não é considerado um algoritmo in-place (no local) porque ele requer uma quantidade significativa de memória extra para funcionar, proporcional ao tamanho da entrada ($O(n)$).
+
+A razão principal reside no processo de intercalação (merge), explicado abaixo:
+
+    1. Necessidade de Espaço Auxiliar: Ao tentar combinar duas sub-listas ordenadas (por exemplo, [2, 5] e [1, 4]) em uma única sequência ordenada, não podemos fazer isso facilmente dentro da própria lista original sem sobrescrever dados que ainda não foram processados ou sem realizar uma quantidade excessiva de trocas (shifts) que prejudicariam a performance.
+    2. O Processo de Cópia:Na implementação padrão (como a feita acima), a função merge cria uma nova lista vazia (lista_ordenada = []).
+        - Ela olha para o primeiro elemento da sub-lista da esquerda e da direita.
+        - Ela copia o menor item para essa nova lista auxiliar.
+        - Isso se repete até que todos os elementos sejam copiados para a nova estrutura.
+    
+Como o algoritmo precisa alocar memória para armazenar essas cópias temporárias das sub-listas (esquerda e direita) e a lista de resultado da intercalação, ele consome memória extra linear em relação ao número de elementos. Diferente de algoritmos como o Quick Sort ou Bubble Sort, que conseguem ordenar trocando elementos dentro do próprio array original com apenas uma variável temporária de apoio ($O(1)$ de espaço extra).
