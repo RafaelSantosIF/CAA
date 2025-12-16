@@ -2,12 +2,12 @@ def quicksort(tarefas):
     if len(tarefas) <= 1:
         return tarefas
     
-    pivo = tarefas[0]
+    pivo = tarefas[len(tarefas) // 2]
     menores = []
     iguais = [pivo]
     maiores = []
     
-    for t in tarefas[1:]:
+    for t in tarefas[:len(tarefas) // 2] + tarefas[len(tarefas) // 2 + 1:]:
         if t[1] < pivo[1]:
             menores.append(t)
         elif t[1] > pivo[1]:
@@ -31,5 +31,5 @@ def agendamentoGuloso(tarefas):
             
     return agendados
 
-listaTarefas = [(0, 3), (0, 6), (1, 4), (3, 5), (3, 8), (4, 7), (5, 9), (6, 10), (8, 11), (5, 10), (12, 14), (13, 16), (14, 17)]
+listaTarefas = [(0, 3), (0, 6), (1, 2), (1, 4), (3, 5), (3, 8), (4, 7), (4, 12), (5, 9), (5, 16), (6, 10), (8, 11), (5, 10), (12, 14), (13, 16), (14, 17)]
 print(agendamentoGuloso(listaTarefas))
