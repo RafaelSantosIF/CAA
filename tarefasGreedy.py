@@ -31,5 +31,6 @@ def agendamentoGuloso(tarefas):
             
     return agendados
 
-listaTarefas = [(0, 3), (0, 6), (1, 2), (1, 4), (3, 5), (3, 8), (4, 7), (4, 12), (5, 9), (5, 16), (6, 10), (8, 11), (5, 10), (12, 14), (13, 16), (14, 17)]
-print(agendamentoGuloso(listaTarefas))
+if __name__ == "__main__":
+    listaTarefas = [(0, 3), (0, 6), (1, 2), (1, 4), (3, 5), (3, 8), (4, 7), (4, 12), (5, 9), (5, 16), (6, 10), (8, 11), (5, 10), (12, 14), (13, 16), (14, 17)]
+    print(agendamentoGuloso(listaTarefas))
